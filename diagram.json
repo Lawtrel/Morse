@@ -8,9 +8,21 @@
         "id": "pico",
         "top": 20,
         "left": 60
+      },
+      { "type": "wokwi-led", "id": "led1", "top": 140.4, "left": -5.8, "attrs": { "color": "red" } },
+      {
+        "type": "wokwi-buzzer",
+        "id": "bz1",
+        "top": 69.6,
+        "left": 174.6,
+        "attrs": { "volume": "0.1" }
       }
     ],
     "connections": [
-      [ "$serialMonitor:RX", "pico:GP0", "", [] ]
+      [ "$serialMonitor:RX", "pico:GP0", "", [] ],
+      [ "bz1:2", "pico:GP21", "green", [ "v0" ] ],
+      [ "bz1:1", "pico:GND.6", "green", [ "v0" ] ],
+      [ "led1:A", "pico:GP13", "green", [ "v0" ] ],
+      [ "led1:C", "pico:GND.4", "green", [ "v0" ] ]
     ]
   }
